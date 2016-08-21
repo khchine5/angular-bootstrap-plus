@@ -23,7 +23,7 @@ module.directive('bspScrollpanel', ['$timeout', '$window', function($timeout, $w
 			}
 
 			child = element.children('ng-transclude').children();
-			if (child.length !== 3)
+			if (child.length > 3)
 				throw new Error("A 'bsp-scrollpanel' directive may contain only one element");
 			child = child[1];
 			initial = attrs.initialPercentage / 100;
