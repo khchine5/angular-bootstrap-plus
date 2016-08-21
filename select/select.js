@@ -126,9 +126,9 @@ angular.module('bs-plus.select', ['ngSanitize'])
 
 			self.toggleDropdown = function($event) {
 				var value, index;
-				if ($event.target.tagName === "SUP") {
+				if ($event.target.tagName === 'SUP') {
+					self.startWorking();
 					value = angular.element($event.target).attr('value');
-					console.log(value);
 					angular.forEach($scope.optionElements, function(elem) {
 						if (elem.attr('value') === value) {
 							elem.removeClass('active');
@@ -139,27 +139,13 @@ angular.module('bs-plus.select', ['ngSanitize'])
 						}
 					});
 					self.syncButton(true);
+					self.stopWorking();
 				} else {
 					$scope.showDropdown = !$scope.isDisabled && !$scope.showDropdown;
 				}
 			};
+
 			$scope.toggleDropdown = function($event) {
-/*
-				var value;
-				$event.stopPropagation();
-				if ($event.target.tagName === "SUP") {
-					value = angular.element($event.target).attr('value');
-					console.log(value);
-					angular.forEach($scope.optionElements, function(elem) {
-						if (elem.attr('value') === value) {
-							elem.removeClass('active');
-						}
-					});
-					self.syncButton(true);
-				} else {
-					$scope.showDropdown = !$scope.isDisabled && !$scope.showDropdown;
-				}
-*/
 				$event.stopPropagation();
 				self.toggleDropdown($event);
 			};
@@ -308,6 +294,7 @@ angular.module('bs-plus.select', ['ngSanitize'])
 			var selectCtrl = controllers[0],
 				parentCtrl = angular.isDefined(controllers[1]) ? controllers[1] : controllers[0],
 				isDisabled = attrs.hasOwnProperty('disabled');
+
 			parentCtrl.addOptionElement(element);
 			if (attrs.hasOwnProperty('selected')) {
 				element.addClass('active');
