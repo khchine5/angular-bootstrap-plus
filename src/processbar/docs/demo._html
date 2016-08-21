@@ -1,0 +1,19 @@
+<h2>ProcessBar</h2>
+<div ng-controller="ProgressDemoCtrl">
+		<h3>Static</h3>
+    <div class="row">
+        <div class="col-sm-4"><bspProcessBar value="55"></bspProcessBar></div>
+        <div class="col-sm-4"><bsp-ProcessBar class="progress-striped" value="22" type="warning">22%</bsp-ProcessBar></div>
+						<from>
+        <bsp-process-bar class="col-sm-4"><bsp-process-bar class="progress-striped active" max="200" value="166" type="danger">
+									<bsp-process-step value="10"></bsp-process-step>
+									<bsp-process-step animate="True"></bsp-process-step>
+								<bsp-process-bar title="Test"></bsp-process-bar>
+							</from>
+    </div>
+	<div class="row">
+								<div class="col-sm-4"><uib-progressbar value="55"></uib-progressbar></div>
+        <div class="col-sm-4"><uib-progressbar class="progress-striped" value="22" type="warning">22%</uib-progressbar></div>
+        <div class="col-sm-4"><uib-progressbar class="progress-striped active" max="200" value="166" type="danger"><i>166 / 200</i></uib-progressbar></div>
+		</div>
+</div>
