@@ -1,7 +1,7 @@
 
 console.log('BootstrapPlusDemo');
 
-angular.module('BootstrapPlusDemo', ['bs-plus.select'])
+angular.module('BootstrapPlusDemo')
 .controller('DummySelectDemoCtrl', function() {})
 .controller('AlertSelectDemoCtrl', function($scope) {
 	$scope.browserChanged = function() {
