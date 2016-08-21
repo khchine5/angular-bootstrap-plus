@@ -9,7 +9,13 @@
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 	<link href="assets/demo.css" rel="stylesheet" />
 
+	<link href="magnifier/docs/demo.css" rel="stylesheet" />
+
 	<link href="processbar/processbar.css" rel="stylesheet" />
+
+	<link href="scrollpanel/docs/demo.css" rel="stylesheet" />
+
+	<link href="scrollpanel/scrollpanel.css" rel="stylesheet" />
 
 	<link href="select/select.css" rel="stylesheet" />
 
@@ -24,15 +30,19 @@
 
 	<script src="magnifier/magnifier.js"></script>
 
+	<script src="magnifier/docs/demo.js"></script>
+
 	<script src="processbar/processbar.js"></script>
 
 	<script src="processbar/docs/demo.js"></script>
 
+	<script src="scrollpanel/scrollpanel.js"></script>
+
+	<script src="scrollpanel/docs/demo.js"></script>
+
 	<script src="select/select.js"></script>
 
 	<script src="select/docs/demo.js"></script>
-
-	<script src="select/test/select.spec.js"></script>
 
 </head>
 <body class="ng-cloak" xxxng-controller="MainCtrl">
@@ -79,7 +89,7 @@
 				<a class="btn btn-outline-inverse btn-lg" href="https://github.com/jrief/angular-bootstrap-plus">
 					<i class="fa fa-github"></i> Code on Github
 				</a>
-				<a class="btn btn-outline-inverse btn-lg" href="angular-bootstrap-plus-0.0.1.zip">
+				<a class="btn btn-outline-inverse btn-lg" href="angular-bootstrap-plus-0.6.1.zip">
 					<i class="fa fa-download"></i> Download Package
 				</a>
 			</p>
@@ -116,12 +126,36 @@ configuration objects.</p>
 				
 				<hr />
 				<section>
+					<h2>Magnifier</h2>
+
+<div class="row">
+	<div class="col-md-12">Examples</div>
+</div>
+
+<div class="row">
+		<div ng-controller="ExampleCtrl">
+			<bsp-magnify class="example1"
+								data-image-src="magnifier/docs/img/nexus5.jpg"></bsp-magnify>
+	</div>
+</div>
+
+				</section>
+				
+				<hr />
+				<section>
 					
 				</section>
 				
 				<hr />
 				<section>
-					<h2>Process Bar</h2>
+					<h2>Scroll Panel</h2>
+<p>This is a horizontal panel which adopts it's width to the embedding container. Instead of adding
+	a scrollbar on the bottom of the panel, this directive adds two control panels to it's left and it's
+	right. Those control panels also contain pointing arrows.
+</p>
+			<bsp-scrollpanel ng-controller="DummyscrollpanelDemoCtrl">
+        <p>sqdqddddddddddddddddddddddddddddddddddddddd me down!</p>
+      </bsp-scrollpanel>
 
 				</section>
 				
@@ -235,7 +269,7 @@ Therefore I decided to write my own version of it.
 		Optionally one may use the <code>&lt;abbr&gt;</code> element to show an abbrevated version of the options label. This content then is shown in the select button,
 		but not in the <code>&lt;bsp-option&gt;</code> element.</li>
 		<li>In the select button, labels of selected options are separated using a comma: <code>, </code>. This can be overriden by using the attribute <code>separator</code>.
-		Special charaters inside the separator attribute, such as spaces, must be URI encoded. In doubt, use the Javascript function <code>encodeURI()</code>. 
+		Special charaters inside the separator attribute, such as spaces, must be URI encoded. In doubt, use the Javascript function <code>encodeURI()</code>.
 	</ol>
 	<h4>HTML Code:</h4>
 	<code>
@@ -403,6 +437,7 @@ Therefore I decided to write my own version of it.
 &nbsp;&nbsp;...
 	</code>
 </div>
+
 				</section>
 				
 			</div>
