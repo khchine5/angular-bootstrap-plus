@@ -145,25 +145,16 @@ module.directive('bspProcessStep', ['$q', function($q) {
 
 
 module.directive('form', ['$timeout', function($timeout) {
-	function toBoolean(value) {
-		var v;
-		if (value && value.length !== 0) {
-			v = angular.lowercase("" + value);
-			value = !(v == 'f' || v == '0' || v == 'false' || v == 'no' || v == 'n' || v == '[]');
-		} else {
-			value = false;
-		}
-		return value;
-	}
-
 	return {
 		restrict: 'E',
 		require: ['^?bspProcessStep', 'form'],
 		priority: 1,
-		scope: {},
 		link: function(scope, element, attrs, controllers) {
 			if (!controllers[0])
 				return;  // not for forms outside a <bsp-process-step></bsp-process-step>
+
+			// create new isolated scope for this form
+			scope = scope.$new(true);
 
 			element.find('input').on('keyup change', function() {
 				// delay until validation is ready
